@@ -10,7 +10,7 @@ connection=sqlite3.connect('data.db')
 cursor=connection.cursor()
 
 #sqlite3 table setup
-if(len(argv)==2 and argv[1]=='setup'):
+if(len(argv)==2 and argv[1]=='-setup'):
     cursor.execute('CREATE TABLE items (link TEXT, price REAL,date TEXT)')
 
 def get_price(bs)->float:
