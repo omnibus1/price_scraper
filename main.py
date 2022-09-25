@@ -49,7 +49,7 @@ for link in link_array:
     
     text=find_text(bs)
     if text==None:
-        continue
+        cursor.execute('INSERT INTO items VALUES (?,?,?)', (link, 0, date))
     price=text_to_int(text)
     cursor.execute('INSERT INTO items VALUES (?,?,?)',(link,price,date))
     connection.commit()
